@@ -18,7 +18,8 @@ int main() {
     }
     else {
         std::cout<<"Roman numeral version: \n";
-        //loop to compile the numerals
+        //loop to compile the numerals. the inputted variable is subtracted after each if statement
+        //in order to make sure it goes through every if statement each time until it hits 0.
         while (convert_to_roman >=1){
             //M" if the remaining number is >= 1000
             if (convert_to_roman >= 1000){
