@@ -18,7 +18,7 @@ int main() {
     std::cout << "Change: " << change << " cents\n";
     
     //now dissect into number of coins
-   // output change
+    // output change
     
     int quarters = change/25;
     std::cout<< "Quarters: " << quarters << "\n";
