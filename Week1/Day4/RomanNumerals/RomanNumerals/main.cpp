@@ -18,6 +18,7 @@ int main() {
     }
     else {
         std::cout<<"Roman numeral version: \n";
+        //loop to compile the numerals
         while (convert_to_roman >=1){
             //M" if the remaining number is >= 1000
             if (convert_to_roman >= 1000){

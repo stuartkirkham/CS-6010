@@ -12,7 +12,7 @@ int main() {
     std::cout << "Please enter a date in US numeric format (mm/dd/yyyy): \n";
     std::string magic_date;
     std::cin >> magic_date;
-    if (magic_date.length() == 10) {
+    if (magic_date.length() != 10) {
         std::cout << "Invalid date. \n";
         return 0;
     }
