@@ -5,14 +5,16 @@
 //
 #include <iostream>
 #include <string>
+// global variable section
+int punctuationTotal = 0;
+int vowelTotal = 0;
+int consonantTotal = 0;
 bool IsTerminator(char terminatorCounter) {
     //The bool isTerminator helps to determine how many sentences there are.
     //Returns whether or not the character is ., ?, or !.
-    char periodCounter = '.';
-    char questionCounter = '?';
-    char exclamationCounter = '!';
+    std::string terminatorString = ".?!";
     // Searches for terminator punctuation.
-    if (terminatorCounter == periodCounter || terminatorCounter == questionCounter || terminatorCounter == exclamationCounter) {
+    if (terminatorString.find(terminatorCounter)!= std::string::npos) {
         return true;
     }
     else {
@@ -22,12 +24,9 @@ bool IsTerminator(char terminatorCounter) {
 bool IsPunctuation(char punctuationCounter) {
     //The bool isPunctuation helps to not count those punctuation marks as a part of the letter count. Because commas aren't letters, but they're also not terminators of sentences.
     //Returns whether or not the character is ., ?, !, or ,.
-     char periodCounter = '.';
-     char questionCounter = '?';
-     char exclamationCounter = '!';
-    char commaCounter = ',';
+    std::string punctuationString = ".?!,";
     // This if statement searches for punctuation and returns true if found.
-     if (punctuationCounter == periodCounter || punctuationCounter == questionCounter || punctuationCounter == exclamationCounter || punctuationCounter == commaCounter) {
+     if (punctuationString.find(punctuationCounter)!= std::string::npos) {
          return true;
      }
      else {
@@ -45,20 +44,8 @@ bool IsSpace(char spaceChecker) {
 }
 bool IsVowel(char vowelChecker) {
     // Returns whether or not the character is a vowel. For our purposes, always treat the character 'y' (and its uppercase version) as a vowel.
-    char aCounter = 'a';
-    char AupperCounter = 'A';
-    char eCounter = 'e';
-    char EupperCounter = 'E';
-    char iCounter = 'i';
-    char IupperCounter = 'I';
-    char oCounter = 'o';
-    char OupperCounter = 'O';
-    char uCounter = 'u';
-    char UupperCounter = 'U';
-    char yCounter = 'y';
-    char YupperCounter = 'Y';
-    // The following ifs statement string has any vowels; if it does, the boolean returns true.
-    if (vowelChecker == aCounter || vowelChecker == AupperCounter || vowelChecker == eCounter || vowelChecker == EupperCounter || vowelChecker == iCounter || vowelChecker == IupperCounter || vowelChecker == oCounter || vowelChecker == OupperCounter || vowelChecker == uCounter || vowelChecker == UupperCounter || vowelChecker == yCounter || vowelChecker == YupperCounter) {
+    std::string vowelString = "AaEeIiOoUuYy";
+    if (vowelString.find(vowelChecker)!= std::string::npos) {
         return true;
     }
     else {
@@ -76,46 +63,69 @@ bool IsConsonant(char consonantChecker) {
 }
 int NumWords(std::string wordCounter) {
     //Returns the number of words in the string.
-    int words = 0;
-    for (int i = 0; i<wordCounter.length(); i++) {
-        if (IsSpace() {
+    int words = 1;
+    for (int i = 0; i < wordCounter.length(); i++) {
+        if (IsSpace(wordCounter[i])) {
             words =  words + 1;
         }
     }
-    std::cout << words;
     return (words);
 }
-/*int NumSentences(std::string sentenceCounter) {
+int NumSentences(std::string sentenceCounter) {
     //Returns the number of sentences in the string. This function can make use of the IsPunctuation helper.
+    int numberOfSentences = 0;
+    for (int i = 0; i < sentenceCounter.length(); i++) {
+        if (IsTerminator(sentenceCounter[i])) {
+            numberOfSentences =  numberOfSentences + 1;
+        }
+    }
+    return (numberOfSentences);
 }
 int NumVowels(std::string vowelCounter) {
     //Returns the number of vowels in the string. This function can make use of the IsVowel helper.
+    int numberOfVowels = 0;
+    for (int i = 0; i < vowelCounter.length(); i++) {
+        if (IsVowel(vowelCounter[i])) {
+            numberOfVowels =  numberOfVowels + 1;
+        }
+    }
+    //std::cout << numberOfVowels;
+    return (numberOfVowels);
 }
 int NumConsonants(std::string consonantCounter) {
     // Returns the number of consonants in the string. This function can make use of the IsConsonant helper.
+    int numberOfConsonants = 0;
+    for (int i = 0; i < consonantCounter.length(); i++) {
+        if (IsConsonant(consonantCounter[i])) {
+            numberOfConsonants =  numberOfConsonants + 1;
+        }
+    }
+    //std::cout << numberOfVowels;
+    return (numberOfConsonants);
 }
 double AverageWordLength(std::string wordLength) {
     //Returns the average length of all words in the string. This function can make use of the IsVowel , IsConsonant , and NumWords helpers.
+    double averageCounter;
+    averageCounter = (vowelTotal+consonantTotal)/double (NumWords(wordLength));
+    return (averageCounter);
 }
 double AverageVowelsPerWord(std::string vowelCounterPerWord) {
     // Returns the average number of vowels per word in the string. This function can make use of the IsVowel and NumWords helpers.
+    double averageVowelCounter;
+    averageVowelCounter = (vowelTotal/double (NumWords(vowelCounterPerWord)));
+    return (averageVowelCounter);
 }
-*/
+
 int main() {
     // This is  a tool that analyzes sentences and reports various statistics about them.
-    // global variable section
-    int punctuationTotal = 0;
-    int vowelTotal = 0;
-    int consonantTotal = 0;
-    //
-    std::cout << "Enter a string containing one or more sentences: \n";
     std::string input;
-    std::getline( std::cin, input );
-//    std::cout << input << "\n";
-    if (input == "done") {
-        std::cout << "Goodbye.";
-    }
-    else {
+    std::cout << "Enter a string containing one or more sentences: \n";
+    std::getline( std::cin,input);
+    while (input != "done") {
+        // resetting global variables
+        punctuationTotal = 0;
+        vowelTotal = 0;
+        consonantTotal = 0;
         for (int i = 0; i<input.length(); i++) {
             //std::cout << input[i] << "\n"; testing string
             if (IsTerminator(input[i])) {
@@ -136,8 +146,20 @@ int main() {
         }
         // std::cout << vowelTotal << "\n"; // test for vowel number
         // std::cout << consonantTotal << "\n"; //test for consonant number
-        NumWords(input);
+        std::cout << "Analysis: \n";
+        std::cout << "Number of words: " << NumWords(input) << "\n";
+        std::cout << "Number of sentences: " << NumSentences(input) << "\n";
+        std::cout << "Number of vowels: " << NumVowels(input) << "\n";
+        std::cout << "Number of consonants: " << NumConsonants(input) << "\n";
+        std::cout << "Reading level (average word length): " << AverageWordLength(input) << "\n";
+        std::cout << "Average vowels per word: " << AverageVowelsPerWord(input) << "\n";
+        std::cout << "\n";
+        // continue looping until user types "done"
+        
+        std::cout << "Enter a string containing one or more sentences: \n";
+        std::getline( std::cin,input);
     }
+    std::cout << "Goodbye.\n";
     
     return 0;
 }
