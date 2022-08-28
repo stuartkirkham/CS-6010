@@ -3,7 +3,6 @@
 //  StringAnalyzer homework
 //  Created by Stuart Kirkham on 8/26/22.
 //
-
 #include <iostream>
 #include <string>
 bool IsTerminator(char terminatorCounter) {
@@ -20,7 +19,6 @@ bool IsTerminator(char terminatorCounter) {
         return false;
     }
 }
-
 bool IsPunctuation(char punctuationCounter) {
     //The bool isPunctuation helps to not count those punctuation marks as a part of the letter count. Because commas aren't letters, but they're also not terminators of sentences.
     //Returns whether or not the character is ., ?, !, or ,.
@@ -76,11 +74,18 @@ bool IsConsonant(char consonantChecker) {
         return false;
     }
 }
-/*
 int NumWords(std::string wordCounter) {
     //Returns the number of words in the string.
+    int words = 0;
+    for (int i = 0; i<wordCounter.length(); i++) {
+        if (IsSpace() {
+            words =  words + 1;
+        }
+    }
+    std::cout << words;
+    return (words);
 }
-int NumSentences(std::string sentenceCounter) {
+/*int NumSentences(std::string sentenceCounter) {
     //Returns the number of sentences in the string. This function can make use of the IsPunctuation helper.
 }
 int NumVowels(std::string vowelCounter) {
@@ -129,8 +134,9 @@ int main() {
                 consonantTotal=consonantTotal+1;
             }
         }
-        // std::cout << vowelTotal << "\n"; test for vowel number
-         std::cout << consonantTotal << "\n"; //test for consonant number
+        // std::cout << vowelTotal << "\n"; // test for vowel number
+        // std::cout << consonantTotal << "\n"; //test for consonant number
+        NumWords(input);
     }
     
     return 0;
