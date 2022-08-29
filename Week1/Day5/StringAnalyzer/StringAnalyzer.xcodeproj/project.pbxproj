@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2024D8C528BD2CD900FCA4E2 /* LetterHelpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2024D8C328BD2CD900FCA4E2 /* LetterHelpers.cpp */; };
+		2024D8C828BD2CE900FCA4E2 /* WordHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2024D8C628BD2CE900FCA4E2 /* WordHelper.cpp */; };
 		204EC76C28B9547F00904BA2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 204EC76B28B9547F00904BA2 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2024D8C328BD2CD900FCA4E2 /* LetterHelpers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LetterHelpers.cpp; sourceTree = "<group>"; };
+		2024D8C428BD2CD900FCA4E2 /* LetterHelpers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LetterHelpers.hpp; sourceTree = "<group>"; };
+		2024D8C628BD2CE900FCA4E2 /* WordHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = WordHelper.cpp; sourceTree = "<group>"; };
+		2024D8C728BD2CE900FCA4E2 /* WordHelper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = WordHelper.hpp; sourceTree = "<group>"; };
 		204EC76828B9547F00904BA2 /* StringAnalyzer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StringAnalyzer; sourceTree = BUILT_PRODUCTS_DIR; };
 		204EC76B28B9547F00904BA2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +47,10 @@
 		204EC75F28B9547F00904BA2 = {
 			isa = PBXGroup;
 			children = (
+				2024D8C428BD2CD900FCA4E2 /* LetterHelpers.hpp */,
+				2024D8C328BD2CD900FCA4E2 /* LetterHelpers.cpp */,
+				2024D8C728BD2CE900FCA4E2 /* WordHelper.hpp */,
+				2024D8C628BD2CE900FCA4E2 /* WordHelper.cpp */,
 				204EC76A28B9547F00904BA2 /* StringAnalyzer */,
 				204EC76928B9547F00904BA2 /* Products */,
 			);
@@ -120,6 +130,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				204EC76C28B9547F00904BA2 /* main.cpp in Sources */,
+				2024D8C828BD2CE900FCA4E2 /* WordHelper.cpp in Sources */,
+				2024D8C528BD2CD900FCA4E2 /* LetterHelpers.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
