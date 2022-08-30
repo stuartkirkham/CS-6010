@@ -13,7 +13,7 @@
   Some basic tests for your library are provided in VectorTest.cpp.
   Compile the tests together with your library using the following command:
   clang++ -std=c++11 VectorTest.cpp VectorUtil.cpp
-  Most of the provided tests will fail until you have provided correct 
+  Most of the provided tests will fail until you have provided correct
   implementations for the VectorUtil library functions.
   You will need to provide more thorough tests.
 */
@@ -76,11 +76,11 @@ int Average( vector<int> input );
 /*
  * Determines whether or not the items in a vector are in non-descending order
  *
- * Non-descending order is similar to ascending order, except that it allows for 
+ * Non-descending order is similar to ascending order, except that it allows for
  * duplicate items to appear next to each other.
  * i.e., no item appearing at a lower index than another item is greater than that
  * other item.
- * 
+ *
  * Examples:
  *  {1, 2, 2, 15, 70} is sorted
  *  {2, 3, 0} is not sorted
@@ -94,3 +94,4 @@ int Average( vector<int> input );
  *   A single-item vector is considered sorted, since there are no items out of order
  */
 bool IsSorted( vector<int> input );
+

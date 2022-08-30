@@ -7,7 +7,7 @@
   Vector util library tests
   Compile this file together with your VectorUtil library with the following command:
   clang++ -std=c++11 VectorTest.cpp VectorUtil.cpp
-  Most of the provided tests will fail until you have provided correct 
+  Most of the provided tests will fail until you have provided correct
   implementations for the VectorUtil library functions.
   You will need to provide more thorough tests.
 */
@@ -47,8 +47,8 @@ int main()
   vector<int> empty;
   
   
-  /* 
-   * Contains tests 
+  /*
+   * Contains tests
    */
 
   // v1 doesn't contain 4, so this should return false
@@ -61,10 +61,10 @@ int main()
     ErrorExit("Contains() - test 2");
   }
 
-  /* 
+  /*
    * The vector 'empty' doesn't contain anything, so this should return false
-   * The specific value we're looking for here (99) is not important in this test. 
-   * This test is designed to find any general errors caused by the array being empty. 
+   * The specific value we're looking for here (99) is not important in this test.
+   * This test is designed to find any general errors caused by the array being empty.
    * That type of error is unlikely to depend on the value we are looking for.
   */
   if( Contains(empty, 99) ) {
@@ -99,3 +99,4 @@ int main()
   std::cout << "All tests passed!\n";
 
 }
+
