@@ -25,9 +25,9 @@
 
 /* Begin PBXFileReference section */
 		2024D8E528BD3AB000FCA4E2 /* VectorHW */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VectorHW; sourceTree = BUILT_PRODUCTS_DIR; };
-		2024D8EF28BD3ACA00FCA4E2 /* VectorUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VectorUtil.h; path = ../../../../../../../Downloads/VectorUtil.h; sourceTree = "<group>"; };
-		2024D8F028BD3AD000FCA4E2 /* VectorUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VectorUtil.cpp; path = ../../../../../../../Downloads/VectorUtil.cpp; sourceTree = "<group>"; };
-		2024D8F228BD3AD400FCA4E2 /* VectorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VectorTest.cpp; path = ../../../../../../../Downloads/VectorTest.cpp; sourceTree = "<group>"; };
+		2024D8EF28BD3ACA00FCA4E2 /* VectorUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VectorUtil.h; sourceTree = "<group>"; };
+		2024D8F028BD3AD000FCA4E2 /* VectorUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VectorUtil.cpp; sourceTree = "<group>"; };
+		2024D8F228BD3AD400FCA4E2 /* VectorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VectorTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
