@@ -70,31 +70,40 @@ int main()
   if( Contains(empty, 99) ) {
     ErrorExit("Contains() - empty");
   }
+    
   // TODO: Add your own tests that thoroughly exercise your VectorUtil library.
+  // These tests check whether the maximum and minimum integer limits are reached.
+    if( Contains(v1, INT_MAX)) {
+        ErrorExit("Contains() - number exceeding limit");
+    }
+    if (Contains(v1, INT_MIN)) {
+        ErrorExit("Contains() - number below limit");
+    }
   /*
    * FindMin tests
    */
-  if( FindMin(v1) ) {
-    ErrorExit("Contains() - test 4");
+  if((FindMin(v1) != -1)) {
+    ErrorExit("FindMin() - test min");
   }
   /*
    * FindMax tests
    */
-  if( FindMax(v1) ) {
-      ErrorExit("Contains() - test 5");
-  }
+  if((FindMax(v1) != 5)) {
+     ErrorExit("FindMax() - test max");
+   }
   /*
    * Average tests
    */
-  if( Average(v1)) {
-      ErrorExit("Contains() - test 6");
+  if( Average(v1)!= 1) {
+      ErrorExit("Average() - test Average");
   }
   /*
    * IsSorted tests
    */
-  if( IsSorted(v1)) {
-      ErrorExit("Contains() - test 6");
+    if( !IsSorted(v1)) {
+      ErrorExit("IsSorted() - Vector not sorted.");
   }
+
   // Since any failed test exits the program, if we made it this far, we passed all tests.
   std::cout << "All tests passed!\n";
 
