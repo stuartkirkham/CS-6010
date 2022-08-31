@@ -13,8 +13,8 @@ int main() {
     std::string input;
     std::cout << "Enter a string containing one or more sentences: \n";
     std::getline( std::cin,input);
-    while (input != "done") {
-        // resetting global variables
+    while (input != "done" && input != "Done") {
+        // resetting variables
         int punctuationTotal = 0;
         int vowelTotal = 0;
         int consonantTotal = 0;
