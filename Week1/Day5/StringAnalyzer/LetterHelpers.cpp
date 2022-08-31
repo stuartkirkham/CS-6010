@@ -32,6 +32,7 @@ bool IsPunctuation(char punctuationCounter) {
          return false;
      }
 }
+// space counter.
 bool IsSpace(char spaceChecker) {
     char spaceCounter = ' ';
     if (spaceChecker == spaceCounter){
@@ -42,7 +43,7 @@ bool IsSpace(char spaceChecker) {
     }
 }
 bool IsVowel(char vowelChecker) {
-    // Returns whether or not the character is a vowel. For our purposes, always treat the character 'y' (and its uppercase version) as a vowel.
+    // Returns whether or not the character is a vowel, including Y.
     std::string vowelString = "AaEeIiOoUuYy";
     if (vowelString.find(vowelChecker)!= std::string::npos) {
         return true;

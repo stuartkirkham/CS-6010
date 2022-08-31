@@ -7,10 +7,6 @@
 #include <string>
 #include "WordHelper.hpp"
 #include "LetterHelpers.hpp"
-// global variable section
-int punctuationTotal = 0;
-int vowelTotal = 0;
-int consonantTotal = 0;
 
 int main() {
     // This is  a tool that analyzes sentences and reports various statistics about them.
@@ -19,9 +15,9 @@ int main() {
     std::getline( std::cin,input);
     while (input != "done") {
         // resetting global variables
-        punctuationTotal = 0;
-        vowelTotal = 0;
-        consonantTotal = 0;
+        int punctuationTotal = 0;
+        int vowelTotal = 0;
+        int consonantTotal = 0;
         for (int i = 0; i<input.length(); i++) {
             //std::cout << input[i] << "\n"; testing string
             if (IsTerminator(input[i])) {
