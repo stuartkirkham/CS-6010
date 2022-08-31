@@ -10,43 +10,43 @@
 #include <vector>
 using namespace std;
 struct PlayingCard {
-    int rank; // 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
-    string rankName; // 1,2,3,4,5,6,7,8,9,10,J,Q,K,A
+    int rank; // 2,3,4,5,6,7,8,9,10,11,12,13,14,15
     char suit; // H , D, S, C
 };
-std::vector<PlayingCard> Deck(std::vector<PlayingCard> deckList){
-    std::vector<PlayingCard> fullDeck;
-    
-    
+vector<PlayingCard> Deck(){
+    vector<PlayingCard> fullDeck;
+    vector<char> suits{'H','D','S','C'};
+    //this loop assigns ranks and suits to each card.
+    for(char suit : suits){
+        for (int i = 1; i<14; i++){
+            PlayingCard newCard = {i, suit};
+            fullDeck.push_back(newCard);
+        }
+    }
     return fullDeck;
 }
-void PrintDeck(std::vector<PlayingCard> deckList) {
-    std::vector<PlayingCard> dl = Deck(deckList);
-    for (PlayingCard dl : deckList){
-        cout << "Card Rank: " << dl.rank << "\n";
-        cout << "Card Name: " << dl.rankName << "\n";
-        cout << "Card Suit: " << dl.suit << "\n";
+void PrintDeck(std::vector<PlayingCard> deckPrint) {
+    cout<< deckPrint.size() << "\n";
+    for(PlayingCard card : deckPrint){
+        if (card.rank == 1){
+            cout << "Card Rank: A " << "Card Suit: " << card.suit << "\n";
+        }
+        else if (card.rank == 11){
+            cout << "Card Rank: J " << "Card Suit: " << card.suit << "\n";
+        }
+        else if (card.rank == 12){
+            cout << "Card Rank: Q " << "Card Suit: " << card.suit << "\n";
+        }
+        else if (card.rank == 13){
+            cout << "Card Rank: K " << "Card Suit: " << card.suit << "\n";
+        }
+        else {
+            cout << "Card Rank: " << card.rank << " Card Suit: " << card.suit << "\n";
+        }
     }
 }
 int main() {
-    std::vector<PlayingCard> deckList;
-    PlayingCard h1 =  {1,"1",'H'};
-    PlayingCard h2 =  {2,"2",'H'};
-    PlayingCard h3 =  {3,"3",'H'};
-    PlayingCard h4 =  {4,"4",'H'};
-    PlayingCard h5 =  {5,"5",'H'};
-    PlayingCard h6 =  {6,"6",'H'};
-    PlayingCard h7 =  {7,"7",'H'};
-    PlayingCard h8 =  {8,"8",'H'};
-    PlayingCard h9 =  {9,"9",'H'};
-    PlayingCard h10 =  {10,"10",'H'};
-    PlayingCard hJ =  {11,"J",'H'};
-    PlayingCard hQ =  {12,"Q",'H'};
-    PlayingCard hK =  {13,"K",'H'};
-    PlayingCard hA =  {14,"A",'H'};
-
-                      
-    
-
+    vector<PlayingCard> deckInfo = Deck();
+    PrintDeck(deckInfo);
     return 0;
 }
