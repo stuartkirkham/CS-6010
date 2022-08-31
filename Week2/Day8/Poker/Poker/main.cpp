@@ -9,12 +9,17 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include <algorithm>
+
 using namespace std;
+
+
 // structure creating a playing card
 struct PlayingCard {
     int rank; // 1,2,3,4,5,6,7,8,9,10,11,12,13
     char suit; // H , D, S, C
 };
+// this function creates the deck.
 vector<PlayingCard> Deck(){
     vector<PlayingCard> fullDeck;
     vector<char> suits{'H','D','S','C'};
@@ -35,7 +40,7 @@ void ShuffleDeck(vector<PlayingCard>& deckShuffle){
     }
 }
 
-//test deck
+//test deck "draw a hand"
 vector <PlayingCard>DrawHand(const vector<PlayingCard>& hand){
     vector<PlayingCard> yourHand;
     //cout << "Your hand is: ";
@@ -43,7 +48,6 @@ vector <PlayingCard>DrawHand(const vector<PlayingCard>& hand){
         PlayingCard newHand = {hand[i].rank, hand[i].suit};
         yourHand.push_back(newHand);
     }
-
     return yourHand;
 }
 
@@ -94,7 +98,7 @@ int main() {
     //ShuffleDeck(deckInfo);
     //PrintDeck(deckInfo);
     vector<PlayingCard> yourHand = DrawHand(deckInfo);
-    
+    //sort(yourHand.begin(),yourHand.end()); //this isnt working
     int flushHand = isFlush(deckInfo);
     int straightHand = isStraight(deckInfo);
     cout << flushHand << " " << straightHand;
