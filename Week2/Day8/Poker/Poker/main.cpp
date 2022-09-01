@@ -29,6 +29,7 @@ vector<PlayingCard> Deck(){
     }
     return fullDeck;
 }
+// this is printing the deck of cards.
 void PrintDeck(const vector<PlayingCard>& deckPrint) {
     //cout<< deckPrint.size() << "\n";
     for(PlayingCard card : deckPrint){
@@ -59,6 +60,7 @@ void ShuffleDeck(vector<PlayingCard>& deckShuffle) //this function shuffles the 
         
     }
 }
+// this is a function which tells the compiler how to sort the cards.
 bool CardComp( PlayingCard card1,  PlayingCard card2)
 {
     return card1.rank <= card2.rank;
@@ -76,7 +78,7 @@ vector<PlayingCard> DrawHand( vector<PlayingCard>& deck)
     return yourHand;
 }
 
-
+// this function checks if the hand is a flush.
 bool IsFlush(vector<PlayingCard> hand)
 {
     for (int i = 0; i < 4; i++)
@@ -90,7 +92,7 @@ bool IsFlush(vector<PlayingCard> hand)
 }
 
 
-
+// this function checks if the hand is a straight.
 bool IsStraight(vector<PlayingCard> hand) {
     for (int i = 0; i < 5; i++) {
         
@@ -100,21 +102,21 @@ bool IsStraight(vector<PlayingCard> hand) {
     }
     return true;
 }
-
+// this function checks if the hand is a straight flush.
 bool IsStraightFlush(vector<PlayingCard> hand) {
     if (IsStraight (hand) && IsFlush (hand)){
         return true;
     }
     return false;
 }
-
+// this funciton checks for royal flush.
 bool IsRoyalFlush(vector<PlayingCard> hand) {
     if ( IsStraightFlush (hand) && hand[0].rank == 10){
         return true;
     }
     return false;
 }
-
+// function to check for a full house in your hand.
 bool IsFullHouse(vector<PlayingCard> hand)
 {
     int rank1 = hand.front().rank;
@@ -150,8 +152,8 @@ vector<PlayingCard>testHand(){
 
 int main() {
     vector<PlayingCard> deckInfo = Deck();
-    srand(time(NULL));
-    int numFlush = 0;
+    srand(time(NULL)); // this is how you truly randomize your hand every time.
+    int numFlush = 0; // these are variables that we set to count how many hands of each type we get over many simulations.
     int numStraight = 0;
     int numStraightFlush = 0;
     int numRoyalFlush = 0;
