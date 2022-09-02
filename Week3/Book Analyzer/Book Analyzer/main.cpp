@@ -13,13 +13,19 @@
 #include <algorithm>
 
 //The title of the book
-void bookTitle(std::vector<std::string>allWords){
-    std::string title;
-    auto findTitle = find(allWords.begin(), allWords.end(), "Title:");
-    if (findTitle == "Title:") {
-        std::cout << title.substr(0,title.find("Author:")) << "\n";
+void bookTitle(std::vector<std::string>allWords) {
+    auto titleFound = find(allWords.begin(), allWords.end(), "Title:");
+    auto authorFound = find(allWords.begin(), allWords.end(), "Author:");
+    std::string finalTitle = allWords.substr (titleFound, authorFound-titleFound);
+    for (int i = 0; i < allWords.size(); i++) {
+        if (titleFound != allWords.end()) {
+            for (int j = 0; j < allWords.size(); j++){
+                std::cout << titleFound[j];
+            }
+            std::cout << "\n";
+        }
+        
     }
-    std::cout << title.substr(0,title.find("Author")) << "\n";
 }
 //The author of the book
 void bookAuthor(std::vector<std::string>allWords){
@@ -32,6 +38,9 @@ void bookAuthor(std::vector<std::string>allWords){
 //The number of appearances, and locations of, the users key word (see below)
 
 int main(int argc, const char * argv[]) {
+    std::string title = "Title: ";
+    std::string author ="Author: ";
+    std::string releaseDate = "Release Date: ";
     // Write a program to read in a book from file,
     // compute the statistics defined below,
     // and output the results to the terminal.
@@ -59,10 +68,6 @@ int main(int argc, const char * argv[]) {
     while (fin >> singleWord) {
         allWords.push_back(singleWord);
     }
-
-
-
-
-
+    bookTitle(allWords);
     return 0;
 }
