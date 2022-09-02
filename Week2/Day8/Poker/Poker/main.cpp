@@ -14,7 +14,7 @@
 using namespace std;
 // structure creating a playing card
 struct PlayingCard {
-    int rank; // 2,3,4,5,6,7,8,9,10,11,12,13,14
+    int rank; // 1,2,3,4,5,6,7,8,9,10,11,12,13
     char suit; // H , D, S, C
 };
 vector<PlayingCard> Deck(){
@@ -22,18 +22,17 @@ vector<PlayingCard> Deck(){
     vector<char> suits{'H','D','S','C'};
     //this loop assigns ranks and suits to each card.
     for(char suit : suits){
-        for (int i = 2; i<15; i++){
+        for (int i = 1; i<14; i++){
             PlayingCard newCard = {i, suit};
             fullDeck.push_back(newCard);
         }
     }
     return fullDeck;
 }
-// this is printing the deck of cards.
 void PrintDeck(const vector<PlayingCard>& deckPrint) {
     //cout<< deckPrint.size() << "\n";
     for(PlayingCard card : deckPrint){
-        if (card.rank == 14){
+        if (card.rank == 1){
             cout << "Card Rank: A " << "Card Suit: " << card.suit << "\n";
         }
         else if (card.rank == 11){
@@ -60,10 +59,18 @@ void ShuffleDeck(vector<PlayingCard>& deckShuffle) //this function shuffles the 
         
     }
 }
-// this is a function which tells the compiler how to sort the cards.
+//int GetSecondaryValue(PlayingCard card)
+//{
+//    if (card.rank == 1)
+//    {
+//        return 14;
+//    }
+//    return card.rank;
+//}
+
 bool CardComp( PlayingCard card1,  PlayingCard card2)
 {
-    return card1.rank <= card2.rank;
+    return card1.rank < card2.rank;
 }
 vector<PlayingCard> DrawHand( vector<PlayingCard>& deck)
 {
@@ -78,10 +85,10 @@ vector<PlayingCard> DrawHand( vector<PlayingCard>& deck)
     return yourHand;
 }
 
-// this function checks if the hand is a flush.
+
 bool IsFlush(vector<PlayingCard> hand)
 {
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < hand.size() - 1; i++)
     {
         if (hand[i].suit != hand[i+1].suit)
         {
@@ -92,31 +99,37 @@ bool IsFlush(vector<PlayingCard> hand)
 }
 
 
-// this function checks if the hand is a straight.
-bool IsStraight(vector<PlayingCard> hand) {
-    for (int i = 0; i < 5; i++) {
+
+bool IsStraight(vector<PlayingCard> hand)
+{
+    for (int i = 0; i < hand.size() - 1; i++)
+    {
         
-        if (hand[i+1].rank != hand[i].rank+1) {
-            return false;
+        if (hand[i].rank + 1 != hand[i+1].rank)
+        {
+            if (i != 0 || hand[i].rank != 1 || hand.back().rank != 13)
+            {
+                return false;
+            }
         }
+        
     }
     return true;
 }
-// this function checks if the hand is a straight flush.
-bool IsStraightFlush(vector<PlayingCard> hand) {
-    if (IsStraight (hand) && IsFlush (hand)){
-        return true;
+
+bool IsStraightFlush(vector<PlayingCard> hand)
+{
+    return IsStraight(hand) && IsFlush(hand);
+}
+
+bool IsRoyalFlush(vector<PlayingCard> hand)
+{
+    if (hand.front().rank == 1 && hand.back().rank == 13)
+    {
+        return IsStraightFlush(hand);
     }
     return false;
 }
-// this funciton checks for royal flush.
-bool IsRoyalFlush(vector<PlayingCard> hand) {
-    if ( IsStraightFlush (hand) && hand[0].rank == 10){
-        return true;
-    }
-    return false;
-}
-// function to check for a full house in your hand.
 bool IsFullHouse(vector<PlayingCard> hand)
 {
     int rank1 = hand.front().rank;
@@ -135,25 +148,14 @@ bool IsFullHouse(vector<PlayingCard> hand)
         }
     }
     return (rank1Count == 3 && rank2Count == 2 ) || (rank2Count == 3 && rank1Count == 2);
+  
 }
 
-//test hand
-vector<PlayingCard>testHand(){
-    vector<PlayingCard> test;
-    PlayingCard card1 = {10, 'H'};
-    PlayingCard card2 = {10, 'H'};
-    PlayingCard card3 = {10, 'H'};
-    PlayingCard card4 = {13, 'H'};
-    PlayingCard card5 = {13, 'H'};
-    
-    test = {card1,card2,card3,card4,card5};
-    return test;
-}
 
 int main() {
     vector<PlayingCard> deckInfo = Deck();
-    srand(time(NULL)); // this is how you truly randomize your hand every time.
-    int numFlush = 0; // these are variables that we set to count how many hands of each type we get over many simulations.
+    srand(time(NULL));
+    int numFlush = 0;
     int numStraight = 0;
     int numStraightFlush = 0;
     int numRoyalFlush = 0;
@@ -183,16 +185,22 @@ int main() {
         }
     }
     /*
-     Num of Flushes: 1778
-     Num of Straights: 172
-     Num of Straight Flushes: 0
-     Num of Royal Flushes: 0
-     Num of Full Houses: 1288
+     Num of Flushes: 1785
+     Num of Straights: 3779
+     Num of Straight Flushes: 12
+     Num of Royal Flushes: 1
+     Num of Full Houses: 1545
     */
     cout <<"Num of Flushes: " << numFlush << "\n";
     cout <<"Num of Straights: " << numStraight << "\n";
     cout <<"Num of Straight Flushes: " << numStraightFlush << "\n";
     cout <<"Num of Royal Flushes: " << numRoyalFlush << "\n";
     cout <<"Num of Full Houses: " << numFullHouse << "\n";
+    
+    
+    
+    
+    
     return 0;
+     
 }
