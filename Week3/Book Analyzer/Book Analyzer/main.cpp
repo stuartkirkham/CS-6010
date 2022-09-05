@@ -115,8 +115,8 @@ int main(int argc, const char * argv[]) {
     std::string author ="Author: ";
     std::string releaseDate = "Release Date: ";
     
-    std::ifstream fin (argv[0]);
-    std::string keyWord = argv[1];
+    std::ifstream fin (argv[1]);
+    std::string keyWord = argv[2];
     // Write a program to read in a book from file,
     // compute the statistics defined below,
     // and output the results to the terminal.
