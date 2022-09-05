@@ -44,12 +44,12 @@ void numWords(std::vector<std::string>allWords){
     std::cout << allWords.size() << "\n";
 }
 //The total number of characters in the file (excluding whitespace).
-void numChars (std::vector<std::string> allWords){
+int numChars (std::vector<std::string> allWords){
     int totalChars = 0;
     for (int i = 0; i < allWords.size(); i++){
         totalChars = totalChars + allWords[i].length();
     }
-    std::cout << totalChars << "\n";
+    return totalChars;
 }
 //The shortest word in the book
 std::string shortWord(std::vector<std::string> allWords){
@@ -72,16 +72,40 @@ std::string longWord(std::vector<std::string> allWords){
     return longestWord;
 }
 //The number of appearances, and locations of, the users key word (see below)
-int keyCount ( std::vector<std::string> allWords, keyWord){
+void keyCount ( std::vector<std::string> allWords, std::string keyWord){
     int key = 0;
-    for (int count : allWords){
-
+    double location = 0;
+    for (int i = 0; i < allWords.size(); i++){
+        if (keyWord == allWords[i]){
+            key = key+1;
+        }
+    }
+    std::cout << "the word \"" << keyWord << "\" was entered " << key << " times: \n";
+    std::string beforeWord = "";
+    std::string afterWord = "";
+    for (int i = 0; i < allWords.size(); i++){
+        if (keyWord == allWords[i]){
+            if (i == 0){
+                beforeWord = "";
+            }
+            else {
+                beforeWord = allWords[i-1];
+            }
+            if (i == allWords.size()-1){
+                afterWord = "";
+            }
+            else {
+                afterWord = allWords[i+1];
+            }
+            std::cout << "at " << int (location/numChars(allWords))*100) <<"%: " << beforeWord <<" " <<  allWords[i] << " " << afterWord << "\n";
+            beforeWord = "";
+            afterWord = "";
+        }
+        location = location + allWords[i].length();
     }
 }
 
 int main(int argc, const char * argv[]) {
-    std::cin << titleName;
-    std::cin << keyWord;
     std::string title = "Title: ";
     std::string author ="Author: ";
     std::string releaseDate = "Release Date: ";
@@ -101,6 +125,8 @@ int main(int argc, const char * argv[]) {
     */
     //this is how you open and read from a file:
     std::ifstream fin ("Test.txt");
+    std::string keyWord = "Hello";
+    //std::cin << keyWord;
     if (fin.fail()){
         std::cout << "Nonexistent file! \n";
         system("PAUSE");
@@ -119,10 +145,11 @@ int main(int argc, const char * argv[]) {
     std::cout <<"Number of words: ";
     numWords(allWords);
     std::cout <<"Number of characters: ";
-    numChars(allWords);
+    std::cout << numChars(allWords) << "\n";
     std::cout <<"The shortest word is \"" << shortWord(allWords);
     std::cout << "\", and the longest word is \"" << longWord(allWords) << "\"\n";
     std::cout <<"\n";
+    keyCount(allWords,keyWord);
     
     return 0;
 }
