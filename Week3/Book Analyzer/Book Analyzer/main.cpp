@@ -16,7 +16,10 @@
 void bookTitle(std::vector<std::string>allWords) {
     auto titleFound = find(allWords.begin(), allWords.end(), "Title:");
     int indexTitle = titleFound - allWords.begin();
-    
+    if (titleFound == allWords.end()){
+        std::cout << "unknown ";
+        return;
+    }
     //std::cout << indexTitle;
     auto authorFound = find(allWords.begin(), allWords.end(), "Author:");
     int indexAuthor = authorFound - allWords.begin();
@@ -24,11 +27,14 @@ void bookTitle(std::vector<std::string>allWords) {
     for (int i = indexTitle + 1; i < indexAuthor; i++) {
         std::cout<<allWords[i] << " ";
     }
-    std::cout << "\n";
 }
 //The author of the book
 void bookAuthor(std::vector<std::string>allWords){
     auto authorFound = find(allWords.begin(), allWords.end(), "Author:");
+    if (authorFound == allWords.end()){
+        std::cout << "unknown";
+        return;
+    }
     int indexAuthor = authorFound - allWords.begin();
     //std::cout << indexTitle;
     auto referenceFound = find(allWords.begin(), allWords.end(), "Release");
@@ -37,7 +43,6 @@ void bookAuthor(std::vector<std::string>allWords){
     for (int i = indexAuthor + 1; i < indexReference; i++) {
         std::cout<<allWords[i] << " ";
     }
-    std::cout << "\n";
 }
 //The total number of words in the file
 void numWords(std::vector<std::string>allWords){
@@ -109,6 +114,9 @@ int main(int argc, const char * argv[]) {
     std::string title = "Title: ";
     std::string author ="Author: ";
     std::string releaseDate = "Release Date: ";
+    
+    std::ifstream fin (argv[0]);
+    std::string keyWord = argv[1];
     // Write a program to read in a book from file,
     // compute the statistics defined below,
     // and output the results to the terminal.
@@ -124,8 +132,8 @@ int main(int argc, const char * argv[]) {
     fout.close();
     */
     //this is how you open and read from a file:
-    std::ifstream fin ("Test.txt");
-    std::string keyWord = "Hello";
+    //std::ifstream fin ("Test.txt");
+    //std::string keyWord = "Hello";
     //std::cin << keyWord;
     if (fin.fail()){
         std::cout << "Nonexistent file! \n";
@@ -138,10 +146,11 @@ int main(int argc, const char * argv[]) {
     while (fin >> singleWord) {
         allWords.push_back(singleWord);
     }
-    std::cout << "Title: ";
+    std::cout << "Statistics for ";
     bookTitle(allWords);
-    std::cout << "Author: ";
+    std::cout << "by ";
     bookAuthor(allWords);
+    std::cout <<": \n";
     std::cout <<"Number of words: ";
     numWords(allWords);
     std::cout <<"Number of characters: ";
