@@ -97,7 +97,7 @@ void keyCount ( std::vector<std::string> allWords, std::string keyWord){
             else {
                 afterWord = allWords[i+1];
             }
-            std::cout << "at " << int (location/numChars(allWords))*100) <<"%: " << beforeWord <<" " <<  allWords[i] << " " << afterWord << "\n";
+            std::cout << "at " << int ((location/numChars(allWords))*100) <<"%: " << beforeWord <<" " <<  allWords[i] << " " << afterWord << "\n";
             beforeWord = "";
             afterWord = "";
         }
