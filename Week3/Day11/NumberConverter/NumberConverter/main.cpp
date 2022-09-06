@@ -8,7 +8,6 @@
 #include <iostream>
 #include <string>
 #include <cstring>
-#include <locale>
 
 //Part 1
 //First we'll write a function that takes a string of digits and the base that number uses, and returns its value as an int. For example:
@@ -35,7 +34,7 @@ void numberConverter (std::string value1, std::string value2){
     }
 }
 int main(int argc, const char * argv[]) {
-    // Ask the user or a number and its base.
+    // Ask the user for a number and its base.
     std::cout << "Please enter a string of digits and the base that number uses. (ex. 99, 10) \n";
     // assign user input to strings.
     std::string value1;
