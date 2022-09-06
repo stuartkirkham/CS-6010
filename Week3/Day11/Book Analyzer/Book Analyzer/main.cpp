@@ -14,6 +14,7 @@
 
 //The title of the book
 void bookTitle(std::vector<std::string>allWords) {
+    // this searches for the word title: if not found, prints unknown.
     auto titleFound = find(allWords.begin(), allWords.end(), "Title:");
     int indexTitle = titleFound - allWords.begin();
     if (titleFound == allWords.end()){
@@ -21,11 +22,12 @@ void bookTitle(std::vector<std::string>allWords) {
         return;
     }
     //std::cout << indexTitle;
+    // this searches for the word Author:
     auto authorFound = find(allWords.begin(), allWords.end(), "Author:");
     int indexAuthor = authorFound - allWords.begin();
     //std::cout << indexAuthor;
     for (int i = indexTitle + 1; i < indexAuthor; i++) {
-        std::cout<<allWords[i] << " ";
+        std::cout << allWords[i] << " ";
     }
 }
 //The author of the book
@@ -111,9 +113,9 @@ void keyCount ( std::vector<std::string> allWords, std::string keyWord){
 }
 
 int main(int argc, const char * argv[]) {
-    std::string title = "Title: ";
-    std::string author ="Author: ";
-    std::string releaseDate = "Release Date: ";
+    //std::string title = "Title: ";
+    //std::string author ="Author: ";
+    //std::string releaseDate = "Release Date: ";
     
     std::ifstream fin (argv[1]);
     std::string keyWord = argv[2];

@@ -1,0 +1,77 @@
+Stuart Kirkham Sep 6, 2022
+Lab: Binary and Hex Numbers
+
+Convert the following decimal numbers to binary and hexadecimal
+
+12
+Binary: 1100
+Hexadecimal: C
+
+63
+Binary: 11 1111
+Hexadecimal: 3F
+
+100
+Binary: 110 0100
+Hexadecimal: 64
+
+127
+Binary: 111 1111
+Hexadecimal: 7F
+
+254
+Binary: 1111 1110
+Hexadecimal: FE
+
+Convert the following binary numbers to decimal and hexadecimal
+100
+decimal:  2*2+0 = 4
+Hexadecimal: 4
+
+10001
+decimal: 1 -> 0x2+1 = 1; 0-> 1x2+0 = 2; 0-> 2x2+0 =4; 0->4x2+0 =8;
+Answer:17
+Hexadecimal: 11
+
+100010
+decimal: 1 -> 0x2+1 = 1; 0-> 1x2+0 = 2; 0-> 2x2+0 =4; 0->4x2+0 =8; 8x2+1=17; 17x2+0=34
+answer: 34
+Hexadecimal: 22
+
+11000000
+decimal:0x2+1=1; 1x2+1=3;3*2+0;6*2+0;12*2+0;24*2+0;48*2+0;96*2+0;
+Answer:192
+Hexadecimal: C0
+
+11111111
+decimal:0x2+1;1x2+1;3*2+1;7*2+1;15*2+1;31*2+1;63*2+1;127*2+1;
+Answer:255
+Hexadecimal: FF
+
+Convert the following hexadecimal numbers to binary and decimal
+A
+Binary: 1010
+Decimal: 10
+
+C0
+Binary: 11000000
+Decimal: 12+0 = 12
+
+FF
+Binary: 11111111
+Decimal: 15+15 = 30
+
+BEEF
+Binary: 1011111011101111
+Decimal: 11 + 14 + 14 + 15 = 54 
+
+F00D
+Binary: 1111000000001101
+Decimal: 15 + 0 + 0 + 13 = 28
+
+Largest number you can write using 8 binary digits?
+11111111
+What is its value in decimal? 255 and hexadecimal? FF
+Significance? Its significant because any power of 2 is written as a 1. So since its less than an even power of two, it can be written as 11111111.
+
+How many fingers do you need to count to 31 using binary? 5.
