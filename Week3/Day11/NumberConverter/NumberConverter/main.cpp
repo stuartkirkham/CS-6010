@@ -22,9 +22,15 @@ int main(int argc, const char * argv[]) {
     numberConverter(value1, value2);
     
     //part 2
-    std::cout << "\nInteger to Decimal: " << FindDecimal(10) << "\n";
-    std::cout << "Integer to Binary: " << FindBinary(10) << "\n";
-    std::cout << "Integer to Hexadecimal: " << FindHex(10) << "\n";
+    int userInput;
+        cout << "\nplease enter an integer." << endl;
+        cin >> userInput;
+        string decRep = FindDecimal(userInput);
+        cout << decRep << endl;
+        string binRep = FindBinary(userInput);
+        cout << binRep << endl;
+        string hexRep = FindHex(userInput);
+        cout << hexRep << endl;
     
     // Tests
     //std::cout << numberConverter(FindHex(10),16) << "\n";
