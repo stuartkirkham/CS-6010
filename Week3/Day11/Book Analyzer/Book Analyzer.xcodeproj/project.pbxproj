@@ -26,9 +26,9 @@
 /* Begin PBXFileReference section */
 		20AAAAC428C8F14D00EEC486 /* BookAnalyzerFuncs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BookAnalyzerFuncs.cpp; sourceTree = "<group>"; };
 		20AAAAC528C8F14D00EEC486 /* BookAnalyzerFuncs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BookAnalyzerFuncs.hpp; sourceTree = "<group>"; };
+		20AAAAC828C9591100EEC486 /* MobyDick.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MobyDick.txt; sourceTree = "<group>"; };
 		20C1C26928C291A700BC7C59 /* Book Analyzer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Book Analyzer"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C1C26C28C291A700BC7C59 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		20C1C27328C2A0E400BC7C59 /* Book Analyzer */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = "Book Analyzer"; path = "../../../../../../Library/Developer/Xcode/DerivedData/Book_Analyzer-cfawscwosknlyjcgivyhedzucenv/Build/Products/Debug/Book Analyzer"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 				20C1C26C28C291A700BC7C59 /* main.cpp */,
 				20AAAAC428C8F14D00EEC486 /* BookAnalyzerFuncs.cpp */,
 				20AAAAC528C8F14D00EEC486 /* BookAnalyzerFuncs.hpp */,
-				20C1C27328C2A0E400BC7C59 /* Book Analyzer */,
+				20AAAAC828C9591100EEC486 /* MobyDick.txt */,
 			);
 			path = "Book Analyzer";
 			sourceTree = "<group>";
