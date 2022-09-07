@@ -31,6 +31,8 @@ int main(int argc, const char * argv[]) {
     //std::ifstream fin ("Test.txt");
     //std::string keyWord = "Hello";
     //std::cin << keyWord;
+    
+    // this outputs if the file isnt in directory.
     if (fin.fail()){
         std::cout << "Nonexistent file! \n";
         system("PAUSE");
