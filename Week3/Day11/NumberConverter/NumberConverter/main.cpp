@@ -25,6 +25,7 @@ int main(int argc, const char * argv[]) {
     int userInput;
         cout << "\nplease enter an integer." << endl;
         cin >> userInput;
+        std::cout << "\n";
         string decRep = FindDecimal(userInput);
         cout << decRep << endl;
         string binRep = FindBinary(userInput);
