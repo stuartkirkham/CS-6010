@@ -54,6 +54,15 @@ int main(int argc, const char * argv[]) {
     std::cout << sizeof(uint16_t) << "\n"; // 2bytes
     std::cout << sizeof(uint64_t) << "\n"; // 8bytes
     
+    // Hexadecimal Constants:
+    std::string uint8_tmax = "FF"; // uint8_t max
+    std::string uint16_tmax = "FFFF"; // uint16_t max
+    std::string uint64_tmax = "FFFF FFFF FFFF FFFF"; // uint64_t max
+    std::string uint8_tmin = "00"; // uint8_t min
+    std::string uint16_tmin = "0000"; // uint16_t min
+    std::string uint64_tmin = "0000 0000 0000 0000"; // uint64_t min
+    std::cout << uint8_tmax << "\n" << uint16_tmax << "\n" << uint64_tmax << "\n";
+    std::cout << uint8_tmin << "\n" << uint16_tmin << "\n" << uint64_tmin << "\n";
     //PART 2 : FLOATING POINT
     float num = (.1+.2);
     double a = .1;
