@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		205FF47428CAB63400C880A5 /* BitManipulation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BitManipulation; sourceTree = BUILT_PRODUCTS_DIR; };
-		205FF47E28CAB65E00C880A5 /* bits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bits.cpp; path = ../../../../../../../Downloads/bits.cpp; sourceTree = "<group>"; };
+		205FF47E28CAB65E00C880A5 /* bits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bits.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
