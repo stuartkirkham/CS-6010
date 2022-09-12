@@ -27,11 +27,11 @@ int main(int argc, const char * argv[]) {
         cin >> userInput;
         std::cout << "\n";
         string decRep = FindDecimal(userInput);
-        cout << decRep << endl;
+        cout << "Decimal: " << decRep << endl;
         string binRep = FindBinary(userInput);
-        cout << binRep << endl;
+        cout << "Binary: " << binRep << endl;
         string hexRep = FindHex(userInput);
-        cout << hexRep << endl;
+        cout << "Hex: " << hexRep << endl;
     
     // Tests
     //std::cout << numberConverter(FindHex(10),16) << "\n";
