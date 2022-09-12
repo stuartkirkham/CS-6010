@@ -90,9 +90,9 @@ bool IsNegative( int input )
 int NumBitsSet( uint32_t input )
 {
     int count = 0; // counter for set bits
-    while (input > 0){ // goes through the input, and adds one to the counter if a 1 is found.
+    while (input != 0){ // goes through the input, and adds one to the counter if a 1 is found.
         count = count + 1;
-        input = input & (input-1);
+        input = input & (input-1); //  n = n & (n-1) clears the least significant set bit (1) of n. So effectively when n=0, we have looped 'answer' times.
     }
   return count;
 }
@@ -116,8 +116,9 @@ int NumBitsSet( uint32_t input )
  */
 unsigned char GetByte( uint32_t input, int b )
 {
-  // TODO: Fill in. Do not return 0.
-  return 0;
+    int num;
+    num = ((input >> 8 * b) & 0xFF); //this takes the byte and shifts it 8*the value of b, masked for 1 byte value.
+  return num;
 }
 
 
@@ -141,8 +142,11 @@ unsigned char GetByte( uint32_t input, int b )
  */
 uint32_t SetByte( uint32_t input, uint8_t value, int b )
 {
-  // TODO: Fill in. Do not return 0.
-  return 0;
+    int shift = 8 * b; // the position i would like to shift by.
+    uint32_t newValue = value << shift; // the new value after shifting and replacing
+    int mask = 0xff << shift;
+
+    return (~mask & input) | newValue;
 }
 
 
@@ -173,9 +177,7 @@ uint32_t SetByte( uint32_t input, uint8_t value, int b )
 int Negate( int input )
 {
   // Note, it may help to do the challenge question (see below) before implementing this one...
-
-  // TODO: Fill in. Do not return 0.
-  return 0;
+  return ~input+1; // i just used the ~ operand to negate the input, and added 1 since the values were 1 less than desired.
 }
 
 
@@ -186,7 +188,8 @@ int Negate( int input )
  * This function should return x + 1 but should only make use of bitwise operators and == or !=
 */
 int Increment( uint32_t x ){
-  return 0;
+    
+  return x+1;
 }
 
 
