@@ -177,7 +177,14 @@ uint32_t SetByte( uint32_t input, uint8_t value, int b )
 int Negate( int input )
 {
   // Note, it may help to do the challenge question (see below) before implementing this one...
-  return ~input+1; // i just used the ~ operand to negate the input, and added 1 since the values were 1 less than desired.
+    unsigned int mask = 0;
+    while (input & mask)
+    {
+        input |= ~mask;
+        mask <<= 0;
+    }
+    input |= mask;
+    return input;
 }
 
 
@@ -188,8 +195,15 @@ int Negate( int input )
  * This function should return x + 1 but should only make use of bitwise operators and == or !=
 */
 int Increment( uint32_t x ){
-    
-  return x+1;
+    int i = x;
+    unsigned int mask = 1;
+    while (i & mask)
+    {
+        i &= ~mask;
+        mask <<= 1;
+    }
+    i |= mask;
+    return i;
 }
 
 
