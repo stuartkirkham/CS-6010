@@ -34,8 +34,9 @@ int main(int argc, const char * argv[]) {
         cout << "Hex: " << hexRep << endl;
     
     // Tests
-    //std::cout << numberConverter(FindHex(10),16) << "\n";
+    std::cout << numberConverter(FindDecimal(14),2) << "\n";
+    //std::cout << numberConverter("10",10);
     //std::cout << numberConverter(FindBinary(10),2) << "\n";
-    //std::cout << numberConverter(FindDecimal(10),10) << "\n";
+    //std::cout << numberConverter(FindHex(10),16) << "\n";
     return 0;
 }
