@@ -92,7 +92,7 @@ int NumBitsSet( uint32_t input )
     int count = 0; // counter for set bits
     while (input != 0){ // goes through the input, and adds one to the counter if a 1 is found.
         count = count + 1;
-        input = input & (input-1); //  n = n & (n-1) clears the least significant set bit (1) of n. So effectively when n=0, we have looped 'answer' times.
+        input = input & (input-1); //  clears the least significant set bit (1) of n. So effectively when n=0, we have looped 'answer' times.
     }
   return count;
 }
@@ -178,8 +178,8 @@ int Negate( int input )
 {
   // Note, it may help to do the challenge question (see below) before implementing this one...
     unsigned int mask = 1;
-    input = ~input;
-    while (input & mask) {
+    input = ~input; // negates the input
+    while (input & mask) { // increments the input. 1 short because of 2's complement
         input &= ~mask;
         mask <<= 1;
     }
@@ -196,7 +196,7 @@ int Negate( int input )
 */
 int Increment( uint32_t x ){
     unsigned int mask = 1;
-    while (x & mask) {
+    while (x & mask) { // increments the input.
         x &= ~mask;
         mask <<= 1;
     }
