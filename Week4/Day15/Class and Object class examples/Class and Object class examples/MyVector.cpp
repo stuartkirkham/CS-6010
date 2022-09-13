@@ -30,7 +30,7 @@ void MyVector:: printVector()
 {
     std::cout << "\n";
     for(size_t i =0; i < size_; i++){
-        cout << data[i];
+        std::cout << data[i];
     }
 }
     

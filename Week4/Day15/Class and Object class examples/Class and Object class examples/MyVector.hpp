@@ -25,6 +25,7 @@ public:
     void makeVector(double* d, size_t size);
     void deleteVector() {
         delete[] data;
+        data = nullptr;
         size_ = 0;
         capacity_ = 0;
     }
