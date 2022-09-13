@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2062A96828D0F6F20023CCF5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2062A96728D0F6F20023CCF5 /* main.cpp */; };
+		2062A97028D0F7120023CCF5 /* VectorInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2062A96E28D0F7120023CCF5 /* VectorInfo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		2062A96428D0F6F20023CCF5 /* DiyVector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DiyVector; sourceTree = BUILT_PRODUCTS_DIR; };
 		2062A96728D0F6F20023CCF5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2062A96E28D0F7120023CCF5 /* VectorInfo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VectorInfo.cpp; sourceTree = "<group>"; };
+		2062A96F28D0F7120023CCF5 /* VectorInfo.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VectorInfo.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				2062A96728D0F6F20023CCF5 /* main.cpp */,
+				2062A96E28D0F7120023CCF5 /* VectorInfo.cpp */,
+				2062A96F28D0F7120023CCF5 /* VectorInfo.hpp */,
 			);
 			path = DiyVector;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2062A97028D0F7120023CCF5 /* VectorInfo.cpp in Sources */,
 				2062A96828D0F6F20023CCF5 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
