@@ -4,12 +4,13 @@
 //
 //  Created by Stuart Kirkham on 9/13/22.
 //
-
-#include <iostream>
 #include "VectorInfo.hpp"
-
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    // Create tests to ensure our vector struct is working.
+    
+   
+    
+    
+    
     return 0;
 }
