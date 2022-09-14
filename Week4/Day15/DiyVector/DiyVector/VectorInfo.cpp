@@ -7,7 +7,7 @@
 
 #include "VectorInfo.hpp"
 
-void makeVector(int initialCapacity){
+void makeVector(int& initialCapacity){
     MyVector MyVec;
     MyVec.capacity = initialCapacity; // amount of data we can put in the vector
     MyVec.size = 0; // current amount of data

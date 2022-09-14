@@ -7,7 +7,8 @@
 #include "VectorInfo.hpp"
 int main(int argc, const char * argv[]) {
     // Create tests to ensure our vector struct is working.
-    
+    MyVector x;
+    x.makeVector(10);
    
     
     
