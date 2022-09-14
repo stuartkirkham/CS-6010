@@ -7,12 +7,10 @@
 
 #include "VectorInfo.hpp"
 
-MyVector MyVector::makeVector(int initialCapacity){
-    MyVector MyVec;
-        MyVec.capacity = initialCapacity; // amount of data we can put in the vector
-        MyVec.size = 0; // current amount of data
-        MyVec.data = new double[MyVec.capacity]; // data placed in vector
-    return MyVec;
+MyVector::MyVector(int initialCapacity){
+        capacity = initialCapacity; // amount of data we can put in the vector
+        size = 0; // current amount of data
+        data = new double[capacity]; // data placed in vector
 }
 void MyVector::freeVector(){//-- should deallocate any heap memory used by the MyVector object
     delete[] data;
@@ -61,5 +59,12 @@ int MyVector::set(int index, int newValue){//-- set the appropriate value in the
         ++size;
     }
     return newValue;
+}
+int MyVector::getSize(){
+    return size;
+}
+
+int MyVector::getCapacity(){
+    return capacity;
 }
 
