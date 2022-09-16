@@ -54,7 +54,7 @@ void MyVector::pushBack(int input) {
     }
 //    this->data[this->size] = input;
     data[ size_ ] = input;
-    this->size_ += 1; //this inserts a value in the first position of the vector since it is empty.
+    size_ += 1; //this inserts a value in the first position of the vector since it is empty.
 }
 
 void MyVector::popBack(int input) {
@@ -96,3 +96,23 @@ MyVector& MyVector::operator= (const MyVector& vec2){
     return *this;
 }
 
+    bool MyVector::operator== (const MyVector& rhs) {
+        return (data == rhs.data && size_ == rhs.size_);
+        
+    }
+    bool MyVector::operator!= (const MyVector& rhs){
+        return !(data==rhs.data && size_ == rhs.size_);
+    }
+  /*  MyVector& MyVector::operator< (const MyVector& rhs){
+        
+    }
+    MyVector& MyVector::operator<= (const MyVector& rhs){
+        
+    }
+    MyVector& MyVector::operator> (const MyVector& rhs){
+        
+    }
+    MyVector& MyVector::operator>= (const MyVector& rhs){
+        
+    }
+*/

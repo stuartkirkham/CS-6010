@@ -41,12 +41,12 @@ public:
 // Overloaded operators
     MyVector& operator= (const MyVector& vec2);
     int& operator[] (int index);// this bracket operator assigns (set function); 
-    MyVector operator== (const MyVector& rhs);
-    MyVector operator!= (const MyVector& rhs);
-    MyVector operator< (const MyVector& rhs);
-    MyVector operator<= (const MyVector& rhs);
-    MyVector operator> (const MyVector& rhs);
-    MyVector operator>= (const MyVector& rhs);
+    bool operator== (const MyVector& rhs);
+    bool operator!= (const MyVector& rhs);
+    MyVector& operator< (const MyVector& rhs);
+    MyVector& operator<= (const MyVector& rhs);
+    MyVector& operator> (const MyVector& rhs);
+    MyVector& operator>= (const MyVector& rhs);
 };
 
 

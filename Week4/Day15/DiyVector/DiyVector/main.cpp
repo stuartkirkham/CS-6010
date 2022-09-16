@@ -21,7 +21,7 @@ int main(int argc, const char * argv[]) {
     vec1.pushBack(8);
     vec1.pushBack(9);
     vec1.pushBack(10);
-    
+    std::cout << "Size after filling vector: " << vec1.getSize() << "\n";
     MyVector vec2(10);
     vec2.pushBack(11);
     vec2.pushBack(12);
@@ -42,11 +42,11 @@ int main(int argc, const char * argv[]) {
     vec1.set(5,45);
    
     //test popback
-    vec1.popBack(5);
+    //vec1.popBack(5);
     std::cout << "replaces value in vec1[5] from 6 to 45: " <<vec1.get(5) << "\n";
    
     //test growVector
-    vec1.growVector();
+    //vec1.growVector();
     std::cout << "Updated Capacity after increasing: " << vec1.getCapacity() << "\n";
     
     // test freeVector
@@ -58,9 +58,17 @@ int main(int argc, const char * argv[]) {
     std::cout << "Vec1[10] using [] operator: " << vec1[9] << "\n";
     // copy constructor
     MyVector vec3(vec1);
+    //TEST == OPERATOR
+    if (vec3 == vec1){
+        std::cout << "== works!\n";
+    }
+    // TEST != OPERATOR
+    if (vec1 != vec2){
+        std::cout << "!= works!\n";
+    }
    // TEST TO ENSURE COPY WORKS
     
-   /* std::cout << "The value of vec3[3] = "<< vec3.get(3) << "\n";
+    std::cout << "The value of vec3[3] = "<< vec3.get(3) << "\n";
     
     //test set
     //std::cout <<  << "\n";
@@ -68,7 +76,7 @@ int main(int argc, const char * argv[]) {
    
     //test popback
     vec3.popBack(5);
-    std::cout << "replaces value in vec3[5] from 6 to 45" <<vec3.get(5) << "\n";
+    std::cout << "replaces value in vec3[5] from 6 to 45: " <<vec3.get(5) << "\n";
    
     //test growVector
     vec3.growVector();
@@ -81,31 +89,12 @@ int main(int argc, const char * argv[]) {
     
     //test [] operator
     std::cout << "Vec1[10] using [] operator: " << vec3[9] << "\n";
-    */
+    
+    if (vec1 == vec2){
+        std::cout << "== works!";
+    }
     MyVector vec5 = vec1;
     // TEST TO ENSURE = OPERATOR WORKS
-     
-    /* std::cout << "The value of vec1[3] = "<< vec5.get(3) << "\n";
-     
-     //test set
-     //std::cout <<  << "\n";
-     vec5.set(5,45);
-    
-     //test popback
-     vec5.popBack(5);
-     std::cout << "replaces value in vec1[5] from 6 to 45: " <<vec5.get(5) << "\n";
-    
-     //test growVector
-     vec5.growVector();
-     std::cout << "Updated Capacity after increasing: " << vec5.getCapacity() << "\n";
-     
-     // test freeVector
-     //vec1.freeVector();
-     std::cout << "Size: " << vec5.getSize() << "\n";
-     //std::cout << "Updated Capacity: " << vec1.getCapacity() << "\n";
-     
-     //test [] operator
-     std::cout << "Vec1[10] using [] operator: " << vec5[9] << "\n";
-     */
+
     return 0;
 }
