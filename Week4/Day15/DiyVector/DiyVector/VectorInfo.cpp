@@ -96,23 +96,23 @@ MyVector& MyVector::operator= (const MyVector& vec2){
     return *this;
 }
 
-    bool MyVector::operator== (const MyVector& rhs) {
+    bool MyVector::operator== (const MyVector& rhs)const {
         return (data == rhs.data && size_ == rhs.size_);
         
     }
-    bool MyVector::operator!= (const MyVector& rhs){
+    bool MyVector::operator!= (const MyVector& rhs)const{
         return !(data==rhs.data && size_ == rhs.size_);
     }
-  /*  MyVector& MyVector::operator< (const MyVector& rhs){
-        
+    bool MyVector::operator< (const MyVector& rhs)const {
+        return (data < rhs.data);
     }
-    MyVector& MyVector::operator<= (const MyVector& rhs){
-        
+    bool MyVector::operator<= (const MyVector& rhs)const {
+        return (data <= rhs.data);
     }
-    MyVector& MyVector::operator> (const MyVector& rhs){
-        
+    bool MyVector::operator> (const MyVector& rhs)const {
+        return (data > rhs.data);
     }
-    MyVector& MyVector::operator>= (const MyVector& rhs){
-        
+    bool MyVector::operator>= (const MyVector& rhs)const {
+        return (data >= rhs.data);
     }
-*/
+

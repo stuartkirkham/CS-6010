@@ -22,7 +22,7 @@ int main(int argc, const char * argv[]) {
     vec1.pushBack(9);
     vec1.pushBack(10);
     std::cout << "Size after filling vector: " << vec1.getSize() << "\n";
-    MyVector vec2(10);
+    MyVector vec2(11);
     vec2.pushBack(11);
     vec2.pushBack(12);
     vec2.pushBack(13);
@@ -33,6 +33,28 @@ int main(int argc, const char * argv[]) {
     vec2.pushBack(18);
     vec2.pushBack(19);
     vec2.pushBack(20);
+    vec2.pushBack(21);
+   
+    MyVector vec3(vec1); // copy vec1 into vec3
+    
+    if (vec1 < vec2){
+        std::cout << "Is vec1 > vec2? :YES\n";
+    }
+    if (vec2> vec1){
+        std::cout << "Vec2 > vec1? : YES\n";
+    }
+    if (vec3 <= vec1){
+        std::cout << "Vec3 <= vec1? : YES\n";
+    }
+    if (vec1 <= vec2){
+        std::cout << "Vec1 <= vec2? : YES\n";
+    }
+    if (vec3 == vec1){
+        std::cout << "== works!";
+    }
+    if (vec1 != vec2){
+        std::cout << "!= works!\n";
+    }
     
     //test get
     std::cout << "The value of vec1[3] = "<< vec1.get(3) << "\n";
@@ -57,16 +79,9 @@ int main(int argc, const char * argv[]) {
     //test [] operator
     std::cout << "Vec1[10] using [] operator: " << vec1[9] << "\n";
     // copy constructor
-    MyVector vec3(vec1);
     //TEST == OPERATOR
-    if (vec3 == vec1){
-        std::cout << "== works!\n";
-    }
     // TEST != OPERATOR
-    if (vec1 != vec2){
-        std::cout << "!= works!\n";
-    }
-   // TEST TO ENSURE COPY WORKS
+
     
     std::cout << "The value of vec3[3] = "<< vec3.get(3) << "\n";
     
@@ -89,10 +104,6 @@ int main(int argc, const char * argv[]) {
     
     //test [] operator
     std::cout << "Vec1[10] using [] operator: " << vec3[9] << "\n";
-    
-    if (vec1 == vec2){
-        std::cout << "== works!";
-    }
     MyVector vec5 = vec1;
     // TEST TO ENSURE = OPERATOR WORKS
 
