@@ -6,7 +6,7 @@
 //
 
 #include "VectorInfo.hpp"
-
+/*
 MyVector::MyVector(int initialCapacity){
         capacity_ = initialCapacity; // amount of data we can put in the vector
         size_ = 0; // current amount of data
@@ -82,11 +82,9 @@ int MyVector::getSize(){
 int MyVector::getCapacity(){
     return capacity_;
 }
+*/
 
-int& MyVector::operator[] (int index){ // [] operator]
-    return data[index];
-}
-    
+/*
 MyVector& MyVector::operator= (const MyVector& other){
     if (*data == *(other.data)){
         return *this;
@@ -154,4 +152,4 @@ MyVector& MyVector::operator= (const MyVector& other){
         }
         return size_ >= rhs.size_;;
     }
-
+*/

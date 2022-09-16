@@ -8,7 +8,7 @@
 
 int main(int argc, const char * argv[]) {
     // Create tests to ensure our vector struct is working.
-    MyVector vec1(10);
+    MyVector<int> vec1(10);
     std::cout << "Capacity: " << vec1.getCapacity() << "\n";
     std::cout << "Size: " << vec1.getSize() << "\n";
     vec1.pushBack(1);
@@ -22,37 +22,49 @@ int main(int argc, const char * argv[]) {
     vec1.pushBack(9);
     vec1.pushBack(10);
     std::cout << "Size after filling vector: " << vec1.getSize() << "\n";
-    MyVector vec2(11);
-    vec2.pushBack(11);
-    vec2.pushBack(12);
-    vec2.pushBack(13);
-    vec2.pushBack(14);
-    vec2.pushBack(15);
-    vec2.pushBack(16);//populate  a second vector
-    vec2.pushBack(17);
-    vec2.pushBack(18);
-    vec2.pushBack(19);
-    vec2.pushBack(20);
-    vec2.pushBack(21);
+    MyVector<double> vec2(11.0);
+    vec2.pushBack(11.2);
+    vec2.pushBack(12.2);
+    vec2.pushBack(13.2);
+    vec2.pushBack(14.3);
+    vec2.pushBack(15.4);
+    vec2.pushBack(16.5);//populate  a second vector
+    vec2.pushBack(17.5);
+    vec2.pushBack(18.5);
+    vec2.pushBack(19.5);
+    vec2.pushBack(20.5);
+    vec2.pushBack(21.5);
+    MyVector<int> vec4(11.0);
+    vec2.pushBack(11.2);
+    vec2.pushBack(12.2);
+    vec2.pushBack(13.2);
+    vec2.pushBack(14.3);
+    vec2.pushBack(15.4);
+    vec2.pushBack(16.5);//populate  a second vector
+    vec2.pushBack(17.5);
+    vec2.pushBack(18.5);
+    vec2.pushBack(19.5);
+    vec2.pushBack(20.5);
+    vec2.pushBack(21.5);
    
     MyVector vec3(vec1); // copy vec1 into vec3
     // testing overloaded operators
-    if (vec1 < vec2){
+    if (vec1 < vec4){
         std::cout << "vec1 < vec2?: YES\n";
     }
-    if (vec2> vec1){
+    if (vec4> vec1){
         std::cout << "Vec2 > vec1?: YES\n";
     }
     if (vec3 <= vec1){
         std::cout << "Vec3 <= vec1?: YES\n";
     }
-    if (vec2 >= vec1){
+    if (vec4 >= vec1){
         std::cout << "Vec2 >= vec1?: YES\n";
     }
     if (vec3 == vec1){
         std::cout << "== works!\n";
     }
-    if (vec1 != vec2){
+    if (vec1 != vec4){
         std::cout << "!= works!\n";
     }
     
