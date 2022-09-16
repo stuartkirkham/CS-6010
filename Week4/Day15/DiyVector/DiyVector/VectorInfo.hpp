@@ -39,7 +39,7 @@ public:
     int getCapacity();
     
 // Overloaded operators
-    MyVector& operator= (const MyVector& vec2);
+    MyVector& operator= (const MyVector& other);
     int& operator[] (int index);// this bracket operator assigns (set function); 
     bool operator== (const MyVector& rhs)const;
     bool operator!= (const MyVector& rhs)const;

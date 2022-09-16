@@ -20,6 +20,9 @@ MyVector::~MyVector(){//-- should deallocate any heap memory used by the MyVecto
 }
 
 MyVector::MyVector(const MyVector& v2){
+    if (this == & v2){
+    }
+    
     capacity_ = v2.capacity_;
     size_ = v2.size_;
     //data = v2.data; this is bad since it just makes a pointer to the same data
@@ -84,35 +87,71 @@ int& MyVector::operator[] (int index){ // [] operator]
     return data[index];
 }
     
-MyVector& MyVector::operator= (const MyVector& vec2){
-    if (*data == *(vec2.data)){
+MyVector& MyVector::operator= (const MyVector& other){
+    if (*data == *(other.data)){
         return *this;
     }
-    capacity_ = vec2.capacity_;
-    size_ = vec2.size_;
+    capacity_ = other.capacity_;
+    size_ = other.size_;
     for (int i = 0; i < size_; i++){
-        data[i] = vec2.data[i];
+        data[i] = other.data[i];
     }
     return *this;
 }
 
     bool MyVector::operator== (const MyVector& rhs)const {
-        return (data == rhs.data && size_ == rhs.size_);
+        if (size_ == rhs.size_){
+            for (int i = 0; i < size_; i++){
+                if (!(data[i] == rhs.data[i])){
+                    return false;
+                }
+                return true;
+            }
+        }
+        return false;
         
     }
     bool MyVector::operator!= (const MyVector& rhs)const{
         return !(data==rhs.data && size_ == rhs.size_);
     }
     bool MyVector::operator< (const MyVector& rhs)const {
-        return (data < rhs.data);
+        if (size_ == rhs.size_){
+            for (int i = 0; i < size_; i++){
+                if (data[i] < rhs.data[i]){
+                    return true;
+                }
+            }
+        }
+        return size_ < rhs.size_;
     }
     bool MyVector::operator<= (const MyVector& rhs)const {
-        return (data <= rhs.data);
+        if (size_ == rhs.size_){
+            for (int i = 0; i < size_; i++){
+                if (data[i] <= rhs.data[i]){
+                    return true;
+                }
+            }
+        }
+        return size_ <= rhs.size_;
     }
     bool MyVector::operator> (const MyVector& rhs)const {
-        return (data > rhs.data);
+        if (size_ == rhs.size_){
+            for (int i = 0; i < size_; i++){
+                if (data[i] > rhs.data[i]){
+                    return true;
+                }
+            }
+        }
+        return size_ > rhs.size_;
     }
     bool MyVector::operator>= (const MyVector& rhs)const {
-        return (data >= rhs.data);
+        if (size_ == rhs.size_){
+            for (int i = 0; i < size_; i++){
+                if (data[i] >= rhs.data[i]){
+                    return true;
+                }
+            }
+        }
+        return size_ >= rhs.size_;;
     }
 

@@ -36,21 +36,21 @@ int main(int argc, const char * argv[]) {
     vec2.pushBack(21);
    
     MyVector vec3(vec1); // copy vec1 into vec3
-    
+    // testing overloaded operators
     if (vec1 < vec2){
-        std::cout << "Is vec1 > vec2? :YES\n";
+        std::cout << "vec1 < vec2?: YES\n";
     }
     if (vec2> vec1){
-        std::cout << "Vec2 > vec1? : YES\n";
+        std::cout << "Vec2 > vec1?: YES\n";
     }
     if (vec3 <= vec1){
-        std::cout << "Vec3 <= vec1? : YES\n";
+        std::cout << "Vec3 <= vec1?: YES\n";
     }
-    if (vec1 <= vec2){
-        std::cout << "Vec1 <= vec2? : YES\n";
+    if (vec2 >= vec1){
+        std::cout << "Vec2 >= vec1?: YES\n";
     }
     if (vec3 == vec1){
-        std::cout << "== works!";
+        std::cout << "== works!\n";
     }
     if (vec1 != vec2){
         std::cout << "!= works!\n";
