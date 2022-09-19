@@ -1,0 +1,3 @@
+/Users/stu/msd/CS6010/myGethubRepo/SFMLSample/xcode/CMakeFiles/testSFML.dir
+/Users/stu/msd/CS6010/myGethubRepo/SFMLSample/xcode/CMakeFiles/ALL_BUILD.dir
+/Users/stu/msd/CS6010/myGethubRepo/SFMLSample/xcode/CMakeFiles/ZERO_CHECK.dir
