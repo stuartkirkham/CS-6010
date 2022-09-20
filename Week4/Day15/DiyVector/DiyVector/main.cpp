@@ -5,7 +5,7 @@
 //  Created by Stuart Kirkham on 9/13/22.
 //
 #include "VectorInfo.hpp"
-bool IsOdd (int i) { return ((i%2)==1); }
+bool IsEven (int i) { return ((i%2)==0); }
 
 int main(int argc, const char * argv[]) {
     // Create tests to ensure our vector struct is working.
@@ -65,8 +65,11 @@ int main(int argc, const char * argv[]) {
     
     std::cout << std::min_element(vec1.begin(),vec1.end()) << "\n";
     
-    std::cout << std::count_if(vec1.begin(),vec1.end(), IsOdd) << "\n";
-    
+    std::cout << std::count_if(vec1.begin(),vec1.end(), IsEven) << "\n";
+    for (int y : vec1){
+        std::remove_if(vec1.begin(), vec1.end(), IsEven);
+    }
+    std:: cout << std::count_if(vec1.begin(),vec1.end(), IsEven) << "\n";
     // testing overloaded operators
     if (vec1 < vec4){
         std::cout << "vec1 < vec2?: YES\n";
