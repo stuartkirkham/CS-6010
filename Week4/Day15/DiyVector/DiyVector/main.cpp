@@ -5,6 +5,7 @@
 //  Created by Stuart Kirkham on 9/13/22.
 //
 #include "VectorInfo.hpp"
+bool IsOdd (int i) { return ((i%2)==1); }
 
 int main(int argc, const char * argv[]) {
     // Create tests to ensure our vector struct is working.
@@ -48,6 +49,24 @@ int main(int argc, const char * argv[]) {
     vec2.pushBack(21.5);
    
     MyVector vec3(vec1); // copy vec1 into vec3
+    
+    // testing begin and end
+    std::cout << vec1.begin() << "\n";
+    std:: cout << vec1.end() << "\n";
+    
+    for( int x : vec1 ) {
+        std::cout << x << "\n";
+    }
+    
+    std::sort(vec1.begin(), vec1.end());
+    for( int x : vec1 ) {
+        std::cout << x << "\n";
+    }
+    
+    std::cout << std::min_element(vec1.begin(),vec1.end()) << "\n";
+    
+    std::cout << std::count_if(vec1.begin(),vec1.end(), IsOdd) << "\n";
+    
     // testing overloaded operators
     if (vec1 < vec4){
         std::cout << "vec1 < vec2?: YES\n";
@@ -118,6 +137,8 @@ int main(int argc, const char * argv[]) {
     std::cout << "Vec1[10] using [] operator: " << vec3[9] << "\n";
     MyVector vec5 = vec1;
     // TEST TO ENSURE = OPERATOR WORKS
+
+    
 
     return 0;
 }

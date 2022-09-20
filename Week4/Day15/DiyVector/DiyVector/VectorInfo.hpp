@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 //Define a struct for your vector that contains 3 fields:
 template<typename T>
@@ -59,12 +60,12 @@ public:
     //void set(int index, int newValue);//set the appropriate value in the vector. This should work like [] for std::vector when they're on the left of an equals sign (vec[3] = 10;).
     //int getSize();
     //int getCapacity();
-    T begin(){
-        
-    }
-    T End(){
-        
-    }
+
+    T* begin() { return data; }
+    T* end() { return data + size_; }
+    const T* begin() const { return data; }
+    const T* end() const { return data + size_; }
+    
     void growVector(){
             if (size_ == capacity_){
         //  1. Dynamically allocate memory for a temporary array that is twice the size of the original. This will require a double *.
