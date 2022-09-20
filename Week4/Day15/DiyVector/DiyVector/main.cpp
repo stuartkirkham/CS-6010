@@ -69,7 +69,10 @@ int main(int argc, const char * argv[]) {
     for (int y : vec1){
         std::remove_if(vec1.begin(), vec1.end(), IsEven);
     }
-    std:: cout << std::count_if(vec1.begin(),vec1.end(), IsEven) << "\n";
+    for( int x : vec1 ) {
+        std::cout << x << "\n";
+    }
+    
     // testing overloaded operators
     if (vec1 < vec4){
         std::cout << "vec1 < vec2?: YES\n";
