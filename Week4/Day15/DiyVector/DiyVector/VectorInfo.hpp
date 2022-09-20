@@ -59,7 +59,12 @@ public:
     //void set(int index, int newValue);//set the appropriate value in the vector. This should work like [] for std::vector when they're on the left of an equals sign (vec[3] = 10;).
     //int getSize();
     //int getCapacity();
-    
+    T begin(){
+        
+    }
+    T End(){
+        
+    }
     void growVector(){
             if (size_ == capacity_){
         //  1. Dynamically allocate memory for a temporary array that is twice the size of the original. This will require a double *.
